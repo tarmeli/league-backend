@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const PlayerSchema = new mongoose.Schema(
   {
     name: String,
-    points: String
+    points: Number
   },
   {
     timestamps: true

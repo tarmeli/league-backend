@@ -1,7 +1,7 @@
 import Schema from "../models/player.model";
 
 const createPlayer = (req, res) => {
-  console.log("CREATEPLAYER");
+  console.log("CREATEPLAYER:", req.body);
   if (!req.body.name) {
     return res.status(400).send({ message: "Player must have a name" });
   } else if (!req.body.points) {
@@ -63,7 +63,7 @@ const findOnePlayer = (req, res) => {
 };
 
 const updatePlayer = (req, res) => {
-  console.log("UPDATEPLAYER");
+  console.log("UPDATEPLAYER", req.body);
   Schema.findById(req.params.playerId, (err, player) => {
     if (err) {
       console.log(err);
