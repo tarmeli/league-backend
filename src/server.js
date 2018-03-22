@@ -7,8 +7,6 @@ import PlayerRoutes from "./routes/player.routes";
 let app = express();
 const port = 8080;
 
-console.log(PlayerRoutes);
-
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());

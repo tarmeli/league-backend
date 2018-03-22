@@ -92,7 +92,16 @@ const updatePlayer = (req, res) => {
           message: "Could not update player with id " + req.params.playerId
         });
       } else {
-        res.send(data);
+        Schema.find((err, players) => {
+          if (err) {
+            console.log(err);
+            res
+              .status(500)
+              .send({ message: "Some error occured while retrieving players" });
+          } else {
+            res.send(players);
+          }
+        });
       }
     });
   });
@@ -119,7 +128,17 @@ const deletePlayer = (req, res) => {
         .send({ message: "Player not found with id " + req.params.playerId });
     }
 
-    res.send({ message: "Player deleted successfully" });
+    Schema.find((err, players) => {
+      if (err) {
+        console.log(err);
+        res
+          .status(500)
+          .send({ message: "Some error occured while retrieving players" });
+      } else {
+        console.log("Deleted player with id:", req.params.playerId);
+        res.send(players);
+      }
+    });
   });
 };
 
