@@ -2,7 +2,8 @@ import express from "express";
 import bodyParser from "body-parser";
 import dbConfig from "./config/config";
 import mongoose from "mongoose";
-import PlayerRoutes from "./routes/player.routes";
+import UserRoutes from "./routes/user.routes";
+import MatchRoutes from "./routes/match.routes";
 
 let app = express();
 const port = 8080;
@@ -28,7 +29,8 @@ app.get("/", (req, res) => {
   res.json({ message: "this is the first entry" });
 });
 
-PlayerRoutes(app);
+UserRoutes(app);
+MatchRoutes(app);
 
 app.listen(port, () => {
   console.log("Listening on port " + port);
