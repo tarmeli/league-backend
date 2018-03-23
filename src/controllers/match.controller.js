@@ -6,7 +6,6 @@ const createMatch = (req, res) => {
     return res.status(400).send({ message: "Match must have players" });
   }
 
-  console.log("players", req.body.players[0].name);
   const match = new Schema({
     matchName: req.body.matchName,
     players: req.body.players
