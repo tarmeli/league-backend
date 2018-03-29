@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const MatchSchema = new mongoose.Schema(
   {
     matchName: String,
-    players: [{ name: String, win: Boolean, tie: Boolean }]
+    players: [{ playerId: String, win: Boolean, tie: Boolean }]
   },
   {
     timestamps: true
