@@ -1,5 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
+import cors from "cors";
 import dbConfig from "./config/config";
 import mongoose from "mongoose";
 import UserRoutes from "./routes/user.routes";
@@ -11,6 +12,7 @@ const port = 8080;
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
+app.use(cors());
 
 mongoose.Promise = global.Promise;
 
