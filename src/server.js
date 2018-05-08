@@ -6,7 +6,7 @@ import UserRoutes from "./routes/user.routes";
 import MatchRoutes from "./routes/match.routes";
 
 let app = express();
-const port = 8080;
+const port = process.env.PORT;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
