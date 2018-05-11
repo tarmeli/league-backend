@@ -137,6 +137,7 @@ const deleteMatch = (req, res) => {
           .send({ message: "Some error occured while retrieving matches" });
       } else {
         console.log("Deleted match with id:", req.params.matchId);
+        console.log(matches);
         res.send(matches);
       }
     });
