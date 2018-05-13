@@ -85,7 +85,7 @@ const updateMatch = (req, res) => {
     }
 
     match.name = req.body.name;
-    match.points = req.body.points;
+    match.players = req.body.players;
 
     match.save((err, data) => {
       if (err) {
